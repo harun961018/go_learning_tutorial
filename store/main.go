@@ -2,6 +2,7 @@ package store
 
 import (
 	"database/sql"
+	"fmt"
 )
 
 func queryDatabase(db *sql.DB) {
@@ -13,9 +14,9 @@ func queryDatabase(db *sql.DB) {
 			var price float64
 			scanErr := rows.Scan(&id, &name, &category, &price)
 			if scanErr == nil {
-				Printfln("Row: %v %v %v %v", id, name, category, price)
+				fmt.Printfln("Row: %v %v %v %v", id, name, category, price)
 			} else {
-				Printfln("Scan error: %v", scanErr)
+				fmt.Printfln("Scan error: %v", scanErr)
 				break
 			}
 		}
