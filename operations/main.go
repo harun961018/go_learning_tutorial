@@ -5,8 +5,8 @@ import (
 	"math"
 )
 
-func main() {
-	fmt.Println("Hello, Operations")
+//Arithemetic operations
+func arithemetic_example() {
 	price, tax := 275.00, 27.40
 	sum := price + tax
 	differnce := price - tax
@@ -23,5 +23,15 @@ func main() {
 	fmt.Println(intVal * 2)
 	fmt.Println(floatVal * 2)
 	fmt.Println(math.IsInf((floatVal * 2), 0))
+}
 
+//Perfoming Explicit Type Conversions
+func type_conversion_example() {
+	price := 240
+	tax := 20.00
+	fmt.Println(float64(price) + tax)
+}
+
+func main() {
+	type_conversion_example()
 }
