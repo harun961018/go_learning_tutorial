@@ -6,8 +6,27 @@ func printPrice(product string, price, taxRate float64) {
 	taxAmount := price * taxRate
 	fmt.Println(product, "price:", price, "Tax:", taxAmount)
 }
+
+//Omitting a Parameter Name
+func ommit_parameter_example(product string, price, _ float64) {
+	taxAmount := price * 0.5
+	fmt.Println(product, "price:", price, "Tax:", taxAmount)
+}
+
+//Defining Varadic Parameters
+func varadic_parameter_example(product string, suppliers []string) {
+	for _, supplier := range suppliers {
+		fmt.Println("Product:", product, "Supplier:", supplier)
+	}
+}
+
+//Dealing with No Arguments for a Variadic Parameter
+func varadic_no_argument_example(product string, suppliers ...string) {
+	for _, supplier := range suppliers {
+		fmt.Println("Product:", product, "Supplier:", supplier)
+	}
+}
+
 func main() {
-	printPrice("Kayak", 275, 0.2)
-	printPrice("Lifejacket", 48.95, 0.2)
-	printPrice("Soccer Ball", 19.50, 0.15)
+
 }
