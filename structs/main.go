@@ -18,6 +18,11 @@ type StockLevel struct {
 	count int
 }
 
+type Expense interface {
+	getName() string
+	getCost(annual bool) float64
+}
+
 func newProduct(name, category string, price float64, supplier *Supplier) *Product {
 	return &Product{name, category, price -10, supplier}
 }
@@ -125,6 +130,14 @@ func struct_pointer_copy_example() {
 	for _, p := range []Product { *p1, p2 } {
 		fmt.Println("Name:", p.name, "Category:", "Supplier:", p.Supplier.name, p.Supplier.city)
 	}
+}
+
+func interface_sytax_example() {
+	expenses := []Expense {
+		Product{"Kayak", "Sports", 1000.00},
+		Service{"Boat", "Sports
+	}
+
 }
 
 func main() {
